@@ -1,0 +1,57 @@
+<!--
+  Generated template for the GooglemapPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>แผนที่แสดงตำแหน่งบ้านนักเรียน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div id="floating-panel">
+    <button ion-button (click)="clearMarkers();">Hide Markers</button>
+    <button ion-button (click)="showMarkers();">Show All Markers</button>
+    <button ion-button (click)="gotoCurrent();">Current Location</button>
+  </div>
+
+  <div>
+    <input id="pac-input" class="controls" type="text" placeholder="ค้นหาอัตโนมัติด้วย keyword">
+  </div>
+
+  <div id="map" style="height:500px"></div>
+  <br>
+  <form (ngSubmit)="operation(tmp)"></form>
+  <ion-item>
+    <ion-label>ชื่อสถานที่</ion-label>
+    <ion-input type="text" [(ngModel)]="tmp.title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Latitude</ion-label>
+    <ion-input readonly="true" type="text" [(ngModel)]="tmp.lat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Longitude</ion-label>
+    <ion-input readonly="true" type="text" [(ngModel)]="tmp.lng"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Address</ion-label>
+    <ion-input type="text" [(ngModel)]="tmp.address"></ion-input>
+  </ion-item>
+
+  <div padding>
+    <button (click)="operation(tmp)" ion-button block>บันทึกข้อมูล</button>
+  </div>
+
+</ion-content>
