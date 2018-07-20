@@ -1,4 +1,4 @@
 # student-location
 
-npm install
+npm install <br>
 ionic serve
